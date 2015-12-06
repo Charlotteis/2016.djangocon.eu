@@ -19,5 +19,6 @@ class ProposalReadOnlyForm(forms.ModelForm):
 
 @admin.register(Proposal)
 class ProposalAdmin(admin.ModelAdmin):
+    actions = None  # prevent accidentally deleting proposals
     exclude = ['name', 'email', 'speaker_information']
     form = ProposalReadOnlyForm
